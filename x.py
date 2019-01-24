@@ -21,7 +21,7 @@ history = model.fit(trainX, trainy, validation_data=(testX, testy), epochs=200, 
 _, train_acc = model.evaluate(trainX, trainy, verbose=0)
 _, test_acc = model.evaluate(testX, testy, verbose=0)
 print('Train: %.3f, Test: %.3f' % (train_acc, test_acc))
-prediction = model.predict_classes(array([[-11.89337759, -13.65864154]]))
+prediction = model.predict_proba(array([[-11.89337759, -13.65864154]]))
 print(prediction)
 
 # learning curves of model accuracy
