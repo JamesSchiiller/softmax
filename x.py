@@ -4,7 +4,8 @@ from keras.models import Sequential
 from keras.layers import Dense
 from keras.optimizers import SGD
 from matplotlib import pyplot
-# generate 2d classification dataset
+from numpy import array
+
 X, y = make_blobs(n_samples=1100, centers=3, n_features=2, cluster_std=2, random_state=2)
 # one hot encode output variable
 y = to_categorical(y)
@@ -20,11 +21,8 @@ history = model.fit(trainX, trainy, validation_data=(testX, testy), epochs=200, 
 _, train_acc = model.evaluate(trainX, trainy, verbose=0)
 _, test_acc = model.evaluate(testX, testy, verbose=0)
 print('Train: %.3f, Test: %.3f' % (train_acc, test_acc))
-
-# TODO: predict
-# prediction = model.predict([[-1.2, 2.2]])
-# print("prediction")
-# print(prediction)
+prediction = model.predict_classes(array([[-11.89337759, -13.65864154]]))
+print(prediction)
 
 # learning curves of model accuracy
 # pyplot.plot(history.history['acc'], label='train')
