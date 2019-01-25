@@ -6,7 +6,7 @@ pip install keras
 pip install tensorflow
 pip install sklearn
 pip install matplotlib
-pip install scipy <~~~ you don't need this but doesn hurt
+pip install scipy <~~~ you don't need this but doesn't hurt
 
 python x.py
 
